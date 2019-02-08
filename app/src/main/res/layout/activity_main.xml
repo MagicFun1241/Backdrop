@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:title="@string/app_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ic_filter_list"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ru.dzgeorgy.backdrop.BackdropLayout
+        android:id="@+id/backdrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:open_icon="@drawable/ic_filter_list"
+        app:close_icon="@drawable/ic_close">
+
+        <include layout="@layout/back_layer" />
+        <include layout="@layout/front_layer" />
+
+    </ru.dzgeorgy.backdrop.BackdropLayout>
+
+</LinearLayout>

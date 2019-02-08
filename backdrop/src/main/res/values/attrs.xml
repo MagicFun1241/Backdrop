@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BackdropLayout">
+        <attr name="open_icon" format="reference" />
+        <attr name="close_icon" format="reference" />
+        <attr name="animation_duration" format="integer|reference" />
+    </declare-styleable>
+</resources>
