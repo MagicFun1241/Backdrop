@@ -11,4 +11,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Show backdrop" />
+
+    <Button
+        android:id="@+id/open_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Open backdrop with MenuItem" />
 </LinearLayout>

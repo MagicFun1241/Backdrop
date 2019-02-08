@@ -1,13 +1,11 @@
 package ru.dzgeorgy.backdrop
 
-import android.app.Activity
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
-import android.view.View
+import android.view.MenuItem
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.FrameLayout
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 
 class BackdropLayout(context: Context, attrs: AttributeSet) : FrameLayout(context, attrs) {
@@ -38,6 +36,20 @@ class BackdropLayout(context: Context, attrs: AttributeSet) : FrameLayout(contex
             toolbar
         )
         toolbar.setNavigationOnClickListener(mListener as ToolbarBackdropListener)
+    }
+
+    fun setupWithMenuItem(menuItem: MenuItem) {
+        mListener = MenuItemBackdropListener(
+            this.context,
+            getChildAt(0),
+            getChildAt(1),
+            AccelerateDecelerateInterpolator(),
+            openIcon!!,
+            closeIcon!!,
+            animationDuration,
+            menuItem
+        )
+        menuItem.setOnMenuItemClickListener(mListener as MenuItemBackdropListener)
     }
 
     fun showBackdrop() {
