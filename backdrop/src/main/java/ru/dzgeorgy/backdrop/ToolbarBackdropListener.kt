@@ -6,7 +6,6 @@ import android.content.Context
 import android.graphics.drawable.Drawable
 import android.view.View
 import android.view.animation.Interpolator
-import android.widget.ImageView
 import androidx.appcompat.widget.Toolbar
 
 class ToolbarBackdropListener @JvmOverloads internal constructor(
@@ -58,7 +57,7 @@ class ToolbarBackdropListener @JvmOverloads internal constructor(
         animator.start()
     }
 
-    fun updateIcon() {
+    private fun updateIcon() {
         if (backdropShown) {
             toolbar.navigationIcon = closeIcon
         } else {
