@@ -14,7 +14,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         backdrop.setupWithToolbar(toolbar)
-        hide_backdrop.setOnClickListener {
+        filter_1.setOnClickListener {
+            text.text = getString(R.string.filter1)
+            backdrop.hideBackdrop()
+        }
+        filter_2.setOnClickListener {
+            text.text = getString(R.string.filter2)
+            backdrop.hideBackdrop()
+        }
+        filter_3.setOnClickListener {
+            text.text = getString(R.string.filter3)
             backdrop.hideBackdrop()
         }
         show_backdrop.setOnClickListener {

@@ -9,24 +9,27 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            app:title="@string/app_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:navigationIcon="@drawable/ic_filter_list"/>
+            app:navigationIcon="@drawable/ic_filter_list"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/colorAccent" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <ru.dzgeorgy.backdrop.BackdropLayout
         android:id="@+id/backdrop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:open_icon="@drawable/ic_filter_list"
-        app:close_icon="@drawable/ic_close">
+        app:close_icon="@drawable/ic_close"
+        app:open_icon="@drawable/ic_filter_list">
 
         <include layout="@layout/back_layer" />
+
         <include layout="@layout/front_layer" />
 
     </ru.dzgeorgy.backdrop.BackdropLayout>

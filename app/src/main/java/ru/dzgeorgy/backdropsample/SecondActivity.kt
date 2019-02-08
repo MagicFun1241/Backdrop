@@ -17,7 +17,16 @@ class SecondActivity : AppCompatActivity() {
         show_backdrop.setOnClickListener {
             second_backdrop.showBackdrop()
         }
-        hide_backdrop.setOnClickListener {
+        filter_1.setOnClickListener {
+            text.text = getString(R.string.filter1)
+            second_backdrop.hideBackdrop()
+        }
+        filter_2.setOnClickListener {
+            text.text = getString(R.string.filter2)
+            second_backdrop.hideBackdrop()
+        }
+        filter_3.setOnClickListener {
+            text.text = getString(R.string.filter3)
             second_backdrop.hideBackdrop()
         }
         open_activity.setOnClickListener {
