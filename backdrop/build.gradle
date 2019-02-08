@@ -3,7 +3,8 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.github.dcendents.android-maven'
 
-group='ru.dzgeorgy.backdrop'
+group = 'ru.dzgeorgy.backdrop'
+version = '1.0'
 
 android {
     compileSdkVersion 28
