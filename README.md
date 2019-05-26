@@ -1,6 +1,6 @@
 [![](https://jitpack.io/v/DzutsevGeorgy/Backdrop.svg)](https://jitpack.io/#DzutsevGeorgy/Backdrop)
-[![Release](https://jitpack.io/v/com.example/Repo.svg)]
-(https://jitpack.io/#com.example/Repo)
+[![Release](https://jitpack.io/v/ru.dzgeorgy/Backdrop.svg)]
+(https://jitpack.io/#ru.dzgeorgy/Backdrop)
 # Backdrop
 Easy way to implement 'backdrop' component!
 
