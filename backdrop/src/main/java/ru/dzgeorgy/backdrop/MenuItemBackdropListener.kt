@@ -17,7 +17,7 @@ class MenuItemBackdropListener @JvmOverloads internal constructor(
     private val closeIcon: Drawable,
     private val animationDuration: Int,
     private val menuItem: MenuItem
-) : MenuItem.OnMenuItemClickListener, IBackdropListener {
+) : MenuItem.OnMenuItemClickListener, BackdropListener {
 
     private val animatorSet = AnimatorSet()
     private var backdropShown = false

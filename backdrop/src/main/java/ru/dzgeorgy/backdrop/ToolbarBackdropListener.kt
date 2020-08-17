@@ -17,28 +17,29 @@ class ToolbarBackdropListener @JvmOverloads internal constructor(
     private val closeIcon: Drawable,
     private val animationDuration: Int,
     private val toolbar: Toolbar
-): View.OnClickListener, IBackdropListener {
-
+): View.OnClickListener, BackdropListener {
     private val animatorSet = AnimatorSet()
     private var backdropShown = false
 
     override fun onClick(v: View) {
-        toggleBackdrop()
+        toggle()
     }
 
-    override fun showBackdrop() {
-        backdropShown = false
-        toggleBackdrop()
+    override fun show() {
+        move(backLayer.height)
     }
 
-    override fun hideBackdrop() {
-        backdropShown = true
-        toggleBackdrop()
+    override fun hide() {
+        move(0)
     }
 
-    override fun toggleBackdrop() {
+    override fun toggle() {
         backdropShown = !backdropShown
 
+        move(if (backdropShown) backLayer.height else 0)
+    }
+
+    private fun move(value: Int) {
         animatorSet.removeAllListeners()
         animatorSet.end()
         animatorSet.cancel()
@@ -48,7 +49,7 @@ class ToolbarBackdropListener @JvmOverloads internal constructor(
         val animator = ObjectAnimator.ofFloat(
             frontLayer,
             "translationY",
-            (if (backdropShown) backLayer.height else 0).toFloat()
+            value.toFloat()
         )
         animator.duration = animationDuration.toLong()
 
@@ -64,5 +65,4 @@ class ToolbarBackdropListener @JvmOverloads internal constructor(
             toolbar.navigationIcon = openIcon
         }
     }
-
 }
