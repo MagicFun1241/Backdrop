@@ -23,23 +23,29 @@ class MenuItemBackdropListener @JvmOverloads internal constructor(
     private var backdropShown = false
 
     override fun onMenuItemClick(item: MenuItem?): Boolean {
-        toggleBackdrop()
+        toggle()
         return true
     }
 
-    override fun showBackdrop() {
+    override fun show() {
         backdropShown = false
-        toggleBackdrop()
+
+        move(backLayer.height)
     }
 
-    override fun hideBackdrop() {
+    override fun hide() {
         backdropShown = true
-        toggleBackdrop()
+
+        move(0)
     }
 
-    override fun toggleBackdrop() {
+    override fun toggle() {
         backdropShown = !backdropShown
 
+        move(if (backdropShown) backLayer.height else 0)
+    }
+
+    private fun move(value: Int) {
         animatorSet.removeAllListeners()
         animatorSet.end()
         animatorSet.cancel()
@@ -49,7 +55,7 @@ class MenuItemBackdropListener @JvmOverloads internal constructor(
         val animator = ObjectAnimator.ofFloat(
             frontLayer,
             "translationY",
-            (if (backdropShown) backLayer.height else 0).toFloat()
+            value.toFloat()
         )
         animator.duration = animationDuration.toLong()
 
@@ -65,6 +71,4 @@ class MenuItemBackdropListener @JvmOverloads internal constructor(
             menuItem.icon = openIcon
         }
     }
-
-
 }

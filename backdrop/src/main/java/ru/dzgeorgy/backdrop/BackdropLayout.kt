@@ -64,5 +64,4 @@ class BackdropLayout(context: Context, attrs: AttributeSet) : FrameLayout(contex
     fun toggle() {
         mListener?.toggle()
     }
-
 }
